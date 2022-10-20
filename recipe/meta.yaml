@@ -1,20 +1,20 @@
 {% set name = "jaxopt" %}
-{% set version = "0.5" %}
+{% set version = "0.5.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz  
-  sha256: 9d48c30c78285ec5beea0264bb21fa69bbf9b82354136f0aaab0f956f82dd797
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 1131fdb8da6d4ee45e7224bc1e3bc84ad60db02cddfce40eda1be9aa9f6ab937
 
-build:  
-  script: {{ PYTHON }} -m pip install . -vv  
+build:
+  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
   number: 0
 
-requirements:  
+requirements:
   host:
     - python >=3.7
     - setuptools
@@ -28,20 +28,20 @@ requirements:
     - scipy >=1.0.0
     - matplotlib-base >=2.0.1
 
-test:  
-   imports:
+test:
+  imports:
     - {{ name|lower }}
 
 about:
   home: https://jaxopt.github.io/stable/
-  summary: 'Hardware accelerated, batchable and differentiable optimizers in JAX'
+  summary: Hardware accelerated, batchable and differentiable optimizers in JAX
   description: |
     Hardware accelerated, batchable and differentiable optimizers in JAX  
-  license: Apache-2.0    
-  license_file: LICENSE 
+  license: Apache-2.0
+  license_file: LICENSE
   doc_url: https://jaxopt.github.io/stable/
   dev_url: https://github.com/google/jaxopt
 
 extra:
-  recipe-maintainers:    
+  recipe-maintainers:
     - dirmeier
