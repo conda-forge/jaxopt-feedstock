@@ -1,5 +1,5 @@
 {% set name = "jaxopt" %}
-{% set version = "0.8.2" %}
+{% set version = "0.8.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 65b5b4d17cde3ead7e3c8de6ebd2df8a9a12a3520211f02b0345dde8de37d25d
+  sha256: 4b06dfa6f915a4f3291699606245af6069371a48dc5c92d4c507840d62990646
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
